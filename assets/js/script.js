@@ -58,4 +58,28 @@ $(document).ready(function () {
   }
 
   // TODO: Add code to display the current date in the header of the page.
+  let todayDate = dayjs().format("dddd, MMMM D")
+  let suffix;
+  switch (dayjs().format("D")) {
+    case "1":
+      suffix = "st";
+      break;
+    case "21":
+      suffix = "st";
+      break;
+    case "31":
+      suffix = "st";
+      break;
+    case "2":
+      suffix = "nd";
+      break;
+    case "22":
+      suffix = "nd";
+      break;
+    default:
+      suffix = "th";
+  }
+  console.log(suffix);
+
+  $("#currentDay").text(todayDate + suffix);
 });
