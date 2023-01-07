@@ -40,7 +40,6 @@ $(document).ready(function () {
   
   //compare timeNow against the id of each time block to apply classes
   for (i = 0; i < $(".container-lg").children().length; i++) {
-    console.log($(".container-lg").children().eq(i).attr("id").split("-").pop())
     if (Number($(".container-lg").children().eq(i).attr("id").split("-").pop()) < timeNow) {
       $(".container-lg").children().eq(i).addClass("past");
     } else if (Number($(".container-lg").children().eq(i).attr("id").split("-").pop()) === timeNow) {
@@ -54,5 +53,9 @@ $(document).ready(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+  for (let i = 0; i < $(".container-lg").children().length; i++) {
+    $(".container-lg").children().eq(i).children().eq(1).text(localStorage.getItem($(".container-lg").children().eq(i).attr("id")));
+  }
+
   // TODO: Add code to display the current date in the header of the page.
 });
