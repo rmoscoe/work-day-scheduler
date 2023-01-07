@@ -24,7 +24,6 @@ $(document).ready(function () {
     }
     
     //save the text value in local storage
-    console.log($(parentDiv).attr("id") + ", " + $(parentDiv).children().eq(1).val());
     localStorage.setItem($(parentDiv).attr("id"), $(parentDiv).children().eq(1).val());
     
   }
@@ -35,6 +34,22 @@ $(document).ready(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   //
+
+  //store the current hour in a variable
+  const timeNow = Number(dayjs().format("H"));
+  
+  //compare timeNow against the id of each time block to apply classes
+  for (i = 0; i < $(".container-lg").children().length; i++) {
+    console.log($(".container-lg").children().eq(i).attr("id").split("-").pop())
+    if (Number($(".container-lg").children().eq(i).attr("id").split("-").pop()) < timeNow) {
+      $(".container-lg").children().eq(i).addClass("past");
+    } else if (Number($(".container-lg").children().eq(i).attr("id").split("-").pop()) === timeNow) {
+      $(".container-lg").children().eq(i).addClass("present");
+    } else {
+      $(".container-lg").children().eq(i).addClass("future");
+    }
+  }
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
