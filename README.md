@@ -42,6 +42,13 @@ This project gave me an opportunity to learn to use two common JavaScript librar
 * [Portfolio](https://rmoscoe.github.io/portfolio/)
 * [LinkedIn](https://www.linkedin.com/in/ryan-moscoe-8652973/)
 * [Github](https://github.com/rmoscoe)
+
+<br/>
+
+## Credits
+
+Starter code provided by Trilogy Education Services, LLC, a 2U, Inc. brand, in conjunction with the University of California, Berkeley.
+
 <br/>
 
 ## License
